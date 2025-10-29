@@ -1,5 +1,7 @@
 ![Implemented](https://img.shields.io/badge/Implemented-green?logo=TickTick&logoColor=white)
 
+_2024.10_
+
 # Two-stage Approach for Industrial OCR: Overcoming the Limitation of CRNN Text Recognizer
 
 __Author:__ [Teo Keng Boon](https://github.com/kengboon)
