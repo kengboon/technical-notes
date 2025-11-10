@@ -6,11 +6,11 @@ _2024.10_
 
 __Author:__ [Teo Keng Boon](https://github.com/kengboon)
 
-__Keywords:__ _OCR, deep OCR, text-recognition, classification_
+__Keywords:__ _OCR, deep OCR, text recognition, classification_
 
 ## Abstract
 
-The deep learning-based optical character recognition (deep OCR) showing high accuracy and robustness compared to traditional OCR methods. However, most of the well known open source OCR libraries use convolutioal recurrent neural network (CRNN) for text recognition, fall short in the industrial use cases, i.e. recognition of irregular and non-natural languages texts e.g. product IDs and serial codes. To solve the limitation, a two-stage approach, i.e. 1) text & characters detection following by 2) character classification is used. The fine-tuning of the approach relies mainly on the image classification model, and is more reliable and explainable for the aforementioned industrial use cases.
+The deep learning-based optical character recognition (deep OCR) showing high accuracy and robustness compared to traditional OCR methods. However, most of the well known open source OCR libraries use convolutioal recurrent neural network (CRNN) for text recognition, fall short in the industrial use cases, i.e. recognition of irregular and non-natural languages texts e.g. product IDs and serial codes. To solve the limitation, a two-stage approach, i.e. 1) text & characters detection, followed by 2) character classification is used. The fine-tuning of the approach relies mainly on the image classification model, and is more reliable and explainable for the aforementioned industrial use cases.
 
 ## Background
 
@@ -21,11 +21,15 @@ The common stages of OCR and deep OCR comprise of (at least):
 1. Text detection (the region that is probably text)
 2. Text recognition (recognize the image into readable text)
 
-There are many well known open source OCR framework, e.g. [EasyOCR](https://github.com/JaidedAI/EasyOCR) and [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) (v2.x), made for scene text recognition. The models used at text recognition stage are convolutional recurrent neural network (CRNN), usually utilize bidirectional long short-term memory (BiLSTM) network or other recurrent network (RNN), that can capture character dependencies and perform well for natural language (e.g. English) text recognition.
+There are many well known open source OCR framework, e.g. [EasyOCR](https://github.com/JaidedAI/EasyOCR) and [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) (v2.x), made for scene text recognition. The models used at text recognition stage are convolutional recurrent neural networks (CRNN), usually utilize bidirectional long short-term memory (BiLSTM) network or other recurrent network (RNN), that can capture character dependencies and perform well for natural language (e.g. English) text recognition.
 
 On the other hand, the industrial OCR use cases involve recognition of irregular and non-natural language texts, e.g. product ID and serial codes. There are no implicit relationship between characters althrough the text may following some predefined pattern. The models from the open source OCR libraries frequently misrecognize such texts due to the interference of the character relationship learnt by CRNN.
 
 ## Method
+
+![Image 1: Modeling of the two-stage OCR approach](https://github.com/user-attachments/assets/48e41402-41f5-42d3-ad79-daac5db870fb)
+
+_Image 1: Modeling of the two-stage OCR approach_
 
 To solve the problem, a two-stage approach is used instead of end-to-end text recognition by the open source OCR libraries.
 
